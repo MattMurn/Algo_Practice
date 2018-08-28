@@ -1,0 +1,72 @@
+.a {
+
+    border-style: solid;
+    border-color: black;
+    margin-bottom: 20px;
+}
+
+.b {
+    display: inline-block;
+    float: left;
+    height: 30px;
+    width: 20%;
+    margin: 0px;
+    
+}
+
+
+.c {
+    float: right;
+    position: relative;
+    display: block;
+    width: 80%;
+    height: 200px;
+    border-style: dashed;
+    border-color: black
+}
+.sub_c {
+    display: block;
+    position: absolute;
+    border-radius: 25px;
+    text-align: center;
+    width: 50px;
+    height: 50px;  
+    background: blue
+
+}
+
+#c1 {
+
+    bottom: 0px;
+    left: 0px;
+ 
+
+}
+#c2 {
+
+    top: 0px;
+    right: 0px;
+
+
+}
+
+.d {
+    display: inline;
+    float: left;
+    height: 200px;
+    width: 33%;
+    position: relative;
+    left: 33%;
+    margin-top: 20px;
+    border: 0, 5, 0, 5;
+    border-style: solid;
+    border-color: black;
+
+}
+.e {
+    float: left;
+    width: 100%;
+    text-align: center;
+    border-style: solid;
+    border-color: black;
+}
