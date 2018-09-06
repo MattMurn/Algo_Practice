@@ -1,7 +1,7 @@
-function chunkArrayInGroups(arr, size) {
+function chunkArrayInGroups(test=[],arr, size) {
     // Break it up.
 
-    let final = [];
+    let final = [] || test;
     if(arr.length < 2){
         final.push(arr);
         return final;
