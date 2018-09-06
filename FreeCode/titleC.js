@@ -1,9 +1,11 @@
 function titleCase(str) {
+    //split str into array 
     let ne = str.split(' ');
+    //interate.
     for(let i =0; i< ne.length-1; i++){
         ne[i][0].toUpperCase();
     }
-    // return ne.forEach(el => el.length);
+    // return array changed. 
     return ne;
   }
   
