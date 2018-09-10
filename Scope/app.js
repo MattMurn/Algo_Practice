@@ -55,6 +55,7 @@ class Bonds extends Change {
         super(name, inst);
         this.ba =ba;
     }
+    
     printBa() {
         console.log(`${this.name}'s batting average is ${this.ba}`)
     }
@@ -67,3 +68,29 @@ barry.cancelDaSeason();
 let gary = new Bonds('Barry', 'San Fransisco', .321)
 
 gary.printBa()
+
+gary.Prototype.edge = () => {
+    console.log(this.name);
+}
+gary.edge();
+/* 
+steps in getting an app up and running in an OOP style.
+Creating Requirements:
+    Functional - features & capabilites
+    Non-Functional - help legal performance
+    F unctional requirements 
+    U sability  
+    R eliability
+    P erformance
+    S upportability
+    + Design restraints
+        implementation 
+        interface
+        physical
+    UML - diagramming language 
+    Use Cases - short phrase active verb
+        title
+        actor - could be user, admin, etc
+        scenario plain english steps that actor follows.
+
+*/
