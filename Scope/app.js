@@ -69,10 +69,6 @@ let gary = new Bonds('Barry', 'San Fransisco', .321)
 
 gary.printBa()
 
-gary.Prototype.edge = () => {
-    console.log(this.name);
-}
-gary.edge();
 /* 
 steps in getting an app up and running in an OOP style.
 Creating Requirements:
@@ -92,5 +88,29 @@ Creating Requirements:
         title
         actor - could be user, admin, etc
         scenario plain english steps that actor follows.
+        use active voice when you are writing these use 
+        cases.
 
-*/
+
+        */
+
+    class paper {
+        constructor(type, cost, style, qty){
+            this.type = type;
+            this.cost = cost;
+            this.style = style;
+            this.qty = qty;
+        }
+        printObj() {
+            console.log(`
+            type: ${this.type}
+            cost: ${this.cost}
+            style: ${this.style}
+            quantity: ${this.qty}`)
+        }
+
+    }
+
+    let legal = new paper('legal', 4.00, 'yellow, small lines', 40);
+
+    legal.printObj();
