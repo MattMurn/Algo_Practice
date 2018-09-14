@@ -3,3 +3,6 @@ function confirmEnding(str, target) {
   }
   
   console.log(confirmEnding("Bastian", "adn"));
+
+
+  

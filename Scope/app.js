@@ -60,14 +60,8 @@ class Bonds extends Change {
         console.log(`${this.name}'s batting average is ${this.ba}`)
     }
 }
-let barry = new Change('Barry', 'Illinois');
 
-barry.printChance();
-barry.cancelDaSeason();
-
-let gary = new Bonds('Barry', 'San Fransisco', .321)
-
-gary.printBa()
+// export default Bonds;
 
 /* 
 steps in getting an app up and running in an OOP style.
@@ -83,34 +77,21 @@ Creating Requirements:
         implementation 
         interface
         physical
-    UML - diagramming language 
-    Use Cases - short phrase active verb
-        title
-        actor - could be user, admin, etc
-        scenario plain english steps that actor follows.
-        use active voice when you are writing these use 
-        cases.
+UML - diagramming language 
+Use Cases - short phrase active verb
+    title
+    actor - could be user, admin, etc
+    scenario plain english steps that actor follows.
+    use active voice when you are writing these use 
+    cases.
 
+User Stories - short scenario structured on index cards
+    follows format:
+        As a (actor)
+        I want (action)
+        So (reason / possible execution path)
 
+Domain Modeling - 
+    start to map use cases. Identify class relationships and apply verbs 
+    as respobsibilities.
         */
-
-    class paper {
-        constructor(type, cost, style, qty){
-            this.type = type;
-            this.cost = cost;
-            this.style = style;
-            this.qty = qty;
-        }
-        printObj() {
-            console.log(`
-            type: ${this.type}
-            cost: ${this.cost}
-            style: ${this.style}
-            quantity: ${this.qty}`)
-        }
-
-    }
-
-    let legal = new paper('legal', 4.00, 'yellow, small lines', 40);
-
-    legal.printObj();
