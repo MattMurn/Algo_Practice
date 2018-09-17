@@ -94,4 +94,39 @@ User Stories - short scenario structured on index cards
 Domain Modeling - 
     start to map use cases. Identify class relationships and apply verbs 
     as respobsibilities.
-        */
+        
+UML modeling to make Class Diagram.
+constructorr method is similar in all oop
+overloaded constructors - take in multiple parameters
+static or shared methods => a method that is used by 
+all instances of the class 
+    */
+
+    class bankAccount {
+        constructor(name, acct) {
+            this.name = name;
+            this.acct = acct;
+        }
+        printBankInfo() {
+            return `
+            Account Holder: ${this.name}
+            Account Number: ${this.acct}
+            `
+        }
+    }
+
+    class Checking extends bankAccount {
+        constructor(name, acct, isChecking){
+            super(name, acct);
+            this.isChecking = isChecking;
+        }
+        checker() {
+           return (this.isChecking) ? this.printBankInfo() : 
+            `${this.name} does not have a checking acocuntssss`
+        }
+    }
+
+
+    let home = new Checking('Matt Murnighan', 4328902, false);
+
+    console.log(home.checker());
