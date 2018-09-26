@@ -100,7 +100,21 @@ constructorr method is similar in all oop
 overloaded constructors - take in multiple parameters
 static or shared methods => a method that is used by 
 all instances of the class 
-    */
+    
+abstract class, when you are only using class to be 
+inherited 
+INTERFACES - created like a class w/o properties, just 
+method signatures - no functionality. can be used
+by multiple class instances. alieviates inheriting 
+every property & method from super class. Implementation
+> Inheritance.
+
+aggregation - has a relationship. 
+composition - has a relationship. Implies ownership
+
+sequence diagrams. 
+
+*/
 
     class bankAccount {
         constructor(name, acct) {
