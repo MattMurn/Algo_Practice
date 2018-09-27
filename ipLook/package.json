@@ -1,8 +1,8 @@
 {
-  "name": "Quotes",
+  "name": "ipLook",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "*",
-    "body-parser": "*"
+    "body-parser": "*",
+    "axios": "*",
+    "express": "*"
   }
 }

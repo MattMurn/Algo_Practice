@@ -113,6 +113,22 @@ aggregation - has a relationship.
 composition - has a relationship. Implies ownership
 
 sequence diagrams. 
+Principles of OOP
+S: Single responsibility
+O: Open/ Closed Priniple
+L: Liskov Substitution Principle - can be replaced by subclasses. 
+I: Interface Segregation Principle - many specific interfaces for different purposes(as )
+D: Dependency Inversion Principle
+
+Gneral Responsibilty Assignment Software Patterns
+9 ideas:
+creator 
+controller
+pure fabrication 
+indirection - reduce coupling
+information expert
+low coupling high cohesion
+polymorphism 
 
 */
 
@@ -144,3 +160,26 @@ sequence diagrams.
     let home = new Checking('Matt Murnighan', 4328902, false);
 
     console.log(home.checker());
+    class Singleton {
+
+        constructor(){
+            if(!Singleton.instance){
+                Singleton.instance = new logger();
+            }
+        }
+    
+    }
+
+    class logger {
+        constructor() {
+            this.logs = [];
+        }
+        get count() {
+            return this.logs.length;
+        }
+        log = (x) => {
+            const stamp = new Date().toDateString();
+            this.logs.push(x)
+            console.log(this.logs);
+        }
+    }
