@@ -1,5 +1,30 @@
 // warrior = 'ninja'
 'use strict'
+{
+    //this is an immediately ienvoked function. 
+    let sharkbites = 'sharkbites';
+    // console.log(`this is an IIFE: ${sharkbites}`)
+}
+
+let modulator = (
+    function(){
+        let incrementor = 0;
+        return {
+            adder: function() {
+                return incrementor ++;
+            },
+            printer: function() {
+                return `your current incrementor is at ${incrementor} and will now reset`
+                incrementor = 0;
+            }
+        }
+    }
+)()();
+for(let i = 0; i<= 10; i++){
+    modulator.adder();
+}
+console.log(modulator.printer())
+
 const warrior = {
     name: 'herry',
     agility: 90,
@@ -159,7 +184,7 @@ polymorphism
 
     let home = new Checking('Matt Murnighan', 4328902, false);
 
-    console.log(home.checker());
+    // console.log(home.checker());
     class Singleton {
 
         constructor(){
@@ -170,16 +195,64 @@ polymorphism
     
     }
 
-    class logger {
-        constructor() {
-            this.logs = [];
-        }
-        get count() {
-            return this.logs.length;
-        }
-        log = (x) => {
-            const stamp = new Date().toDateString();
-            this.logs.push(x)
-            console.log(this.logs);
-        }
+    // class logger {
+    //     constructor() {
+    //         this.logs = [];
+    //     }
+    //     get count() {
+    //         return this.logs.length;
+    //     }
+    //     log = (x) => {
+    //         const stamp = new Date().toDateString();
+    //         this.logs.push(x)
+    //         console.log(this.logs);
+    //     }
+    // }
+
+
+    function User(name=null, age=null){
+        this.name = name;
+        this.age = age;
     }
+
+    User.prototype.toString = function() {
+        return `${this.name} is ${this.age} years old`;
+    }
+
+    let conner = new User('Conner', 34);
+
+    // console.log(conner.toString())
+
+    let boozer = (()=>{
+
+        let hits = [];
+        return {
+            pushHit: (x) => {
+               return hits.push(x);
+            },
+            printHits: () => {
+                return hits;
+            },
+            popHit: () => {
+                return hits.pop();
+            }
+            }
+    
+    })(); // Immediately Invoked Function Expression
+
+    boozer.pushHit('first hit');
+    boozer.pushHit('second hits');
+    boozer.pushHit('third hits');
+
+    console.log(boozer.printHits());
+    // console.log(boozer.hits)
+    boozer.popHit();
+    boozer.popHit();
+    boozer.popHit();
+    console.log(boozer.printHits());
+
+    let cruzer = new Object(name=null);
+
+    cruzer.prototype.name = "jerry";
+
+    console.log(cruzer.name);
