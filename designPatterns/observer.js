@@ -28,7 +28,7 @@ ObserverList = () => {
     indexof: (obj, startIndex) => {
         let i = startIndex;
         while(i < this.ObserverList.length){
-            if(this.ObserverList[i] === objc){
+            if(this.ObserverList[i] === obj){
                 return i;
             }
             i++;
