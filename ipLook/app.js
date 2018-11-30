@@ -5,7 +5,7 @@ let hits = [];
 const getIp = () => {
     axios.get('http://getcitydetails.geobytes.com/GetCityDetails?fqcn=')
     .then(data => {
-        // console.log(data.data);
+        console.log(data.data);
         let ip = data.data.geobytesipaddress
     
     axios.get(`http://api.ipstack.com/${ip}?access_key=e3af7c52287a4cc971a2caa31e54fb6b`)
