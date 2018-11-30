@@ -16,50 +16,52 @@ Observer Components:
     state is consistent with the Subject's  
 */
 
-ObserverList = () => {
+function ObserverList() {
     this.ObserverList = [];
-    add: obj => this.ObserverList.push(obj);
-    count: () => this.ObserverList.length;
-    get: index => {
-        if(index > -1 && index < this.ObserverList.length){
-            return this.ObserverList[index];
-        }
-    };
-    indexof: (obj, startIndex) => {
-        let i = startIndex;
-        while(i < this.ObserverList.length){
-            if(this.ObserverList[i] === objc){
-                return i;
-            }
-            i++;
-        }
-        return -1;
-    }
-    removeAt: index => {
-        this.ObserverList.splice(index, 1);
+};
+ObserverList.prototype.add = function(obj) {
+    return this.ObserverList.push(obj);
+} 
+ObserverList.prototype.count = () => this.ObserverList.length;
+ObserverList.prototype.get = index => {
+    if(index > -1 && index < this.ObserverList.length){
+        return this.ObserverList[index];
     }
 };
-
-Subject = () => {
-    this.observers = new ObserverList();
-    addObserver = observer => this.observers.add(observer);
-    removeObserver = observer => this.observers.removeAt(this.observers.indexof(observer));
-    notify = context => {
-        let observerCount = this.observers.count();
-        for(let i = 0; i < observerCount; i++){
-            this.observers.get(i).update(context);
+ObserverList.prototype.indexOf = (obj, startIndex) => {
+    let i = startIndex;
+    while(i < this.ObserverList.length){
+        if(this.ObserverList[i] === objc){
+            return i;
         }
+        i++;
+    }
+    return -1;
+}
+ObserverList.prototype.removeAt = index => {
+    this.ObserverList.splice(index, 1);
+}
+
+function Subject() {
+    this.observers = new ObserverList();
+}
+Subject.prototype.addObserver = observer => this.observers.add(observer);
+Subject.prototype.removeObserver = observer => this.observers.removeAt(this.observers.indexof(observer));
+Subject.prototype.notify = function(context) {
+    let observerCount = this.observers.count();
+    for(let i = 0; i < observerCount; i++){
+        this.observers.get(i).update(context);
     }
 }
 
-Observer = () => {
+function Observer() {
     this.update = () => {
 
     }
 }
 //mapping key to "extended" object
 extend = (obj, extension) => {
-    for(var key in extenstion){
+    for(var key in extension){
         obj[key] = extension[key];
     }
 }
@@ -70,19 +72,20 @@ let controlCheckbox = document.getElementById('mainCheckbox'),
 
 extend(controlCheckbox, new Subject());
 
-controlCheckbox.onclick = () => {
+controlCheckbox.onclick = function() {
+    // controlCheckbox.addObserver('djfsld');
     controlCheckbox.notify(controlCheckbox.checked);
 }
 
 addBtn.onclick = addNewObserver;
 
-addNewObserver = () => {
+function addNewObserver() {
+    console.log("ASDDDDD")
     let check = document.createElement('input');
     check.type = 'checkbox';
-
     extend(check, new Observer());
     check.update = value => this.checked = value;
-    controlCheckbox.addObserver(check);
+    // controlCheckbox.addObserver(check);
     container.appendChild(check);
 }
 
