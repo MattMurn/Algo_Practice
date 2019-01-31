@@ -1,3 +1,9 @@
+array_diff = (a, b) => {
+    return a.filter(x => b.indexOf(x) == -1)
+}
+console.log(array_diff([3,4, 10], [3]));
+console.log(array_diff([], [3]));
+
 arrDiff = (...numbers) => {
     if(numbers.length < 2){
         return [];
@@ -23,13 +29,8 @@ arrDiff = (...numbers) => {
             }
         }
     }
-
-    // console.log(numObj)
-    // console.log(numbers);
     return [final.reduce((s, n) => s -n)];
+    
+    return final
 }
 
-// console.log(arrDiff([2,3,3], [3]))
-
-console.log(arrDiff([3,4, 10], [3], [3,1]))
-// console.log(arrDiff([]))
