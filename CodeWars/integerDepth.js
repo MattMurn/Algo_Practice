@@ -12,9 +12,4 @@ const computeDepth = x => {
 }
 
 console.log(computeDepth(443));
-/*
-loop through number to get product.
-take product and determine if its in depth array.
-if not push, else continue.
-if depth array length === 9 return i;
-*/
+
