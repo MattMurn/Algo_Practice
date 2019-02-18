@@ -1,5 +1,12 @@
-const cent_rounder = function(amount){
+
+const rounder = function(amount){
     return Math.round(amount*100)/100;
 };
+const taxRounder = function(amount){
+    return Math.round(amount/.05)*.05; 
+}
 
-module.exports = cent_rounder;
+module.exports = {
+    rounder: rounder,
+    taxRounder: taxRounder
+}

@@ -1,23 +1,42 @@
-let round = require('./helperFunction')
+let { rounder, taxRounder } = require('./helperFunction')
 
-const Item = function(name, quantity, price, origin, type){
+const Item = function(name, quantity, price, tax, type){
     this.name = name;
     this.quantity = quantity;
     this.price = price;
-    this.origin = origin;
+    this.tax = tax;
     this.type = type;
+    
     this.itemSubTotal = function(){
-        return round(this.price * this.quantity);
+        return rounder(this.price * this.quantity);
     };
-    this.itemTax = function() {
-        if(this.type === 'book' || this.type === 'food' ||this.type === 'medical'){
-            return 0;
+    this.importTax = function(){
+        if(this.tax.type === 'import'){
+            // console.log()
+            return (this.price * this.quantity)*.05;
         }
         else {
-            return round((this.price * this.quantity) * this.origin.amount);          
+            return 0;
         }
     }
-    
+    this.domesticTax = function() {
+            if(this.type === 'book' || this.type === 'food' ||this.type === 'medical'){
+                return 0;
+            }
+            else {
+                return (this.price * this.quantity) * .1
+            }
+    }
+    this.totalTax = function(){
+        switch(this.tax.type){
+            case 'import':
+                // console.log(taxRounder(this.domesticTax() +this.importTax() + this.price));
+                return taxRounder(this.importTax()) + taxRounder(this.domesticTax());
+            case 'domestic':
+            // console.log(taxRounder(this.domesticTax() + this.price));
+                return taxRounder(this.domesticTax());
+        }
+    }
 }
 
 module.exports = Item;
