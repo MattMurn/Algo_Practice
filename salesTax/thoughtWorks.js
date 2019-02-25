@@ -63,5 +63,10 @@ Sales Taxes: 6.70
 Total: 74.68
 ==========
 
+Read in input from txt file
+class Item - loop through and create new item per line.
+class Items - store multiple item instances in ArrayList;
+class Cart - loop over Items with methods: getSubTotal, getTax, returnTotal.
+
 */
 

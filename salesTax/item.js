@@ -12,7 +12,6 @@ const Item = function(name, quantity, price, tax, type){
     };
     this.importTax = function(){
         if(this.tax.type === 'import'){
-            // console.log()
             return (this.price * this.quantity)*.05;
         }
         else {
